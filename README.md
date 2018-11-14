@@ -4,7 +4,7 @@
 <br>  
 
 ## About MnemonicHacker
-MnemonicHacker list up instructions that using designated mnemonic operand.  
+MnemonicHacker searches instructions that using designated mnemonic operand.  
 This application leverages https://c9x.me.  
 <br>  
 
