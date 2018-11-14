@@ -3,27 +3,27 @@
 - jiwon.choi@kaist.ac.kr
 <br>  
 
-## About MnemonicHacker
-MnemonicHacker searches instructions that using designated mnemonic operand.  
+## About MnemonicHunter
+MnemonicHunter searches instructions that using designated mnemonic operand.  
 This application leverages https://c9x.me.  
 <br>  
 
 ## Install
 
-    git clone https://github.com/eternalklaus/MnemonicHacker.git
-    cd MnemonicHacker
-    python MnemonicHacker.py
+    git clone https://github.com/eternalklaus/MnemonicHunter.git
+    cd MnemonicHunter
+    python MnemonicHunter.py
 <br>  
 
 ## Example
 Lets search about instruction for effective address computation.  
 Mnemonic `r/m` and `m32` means memory reference, so let's search about it.   
 
-    python MnemonicHacker.py "r/m" "m32"
+    python MnemonicHunter.py "r/m" "m32"
 
 As the same manner, search instructions using *immediate 4byte value* as operand.
 
-    python MnemonicHacker.py "imm32"
+    python MnemonicHunter.py "imm32"
 <br>  
 
 ## Mnemonic
