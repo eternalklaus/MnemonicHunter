@@ -1,5 +1,5 @@
 # MnemonicHacker
-- Jiwon Choi 
+- Developed by Jiwon Choi 
 - jiwon.choi@kaist.ac.kr
 <br>  
 
