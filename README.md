@@ -1,4 +1,4 @@
-# MnemonicHacker
+# MnemonicHunter
 - Developed by Jiwon Choi 
 - jiwon.choi@kaist.ac.kr
 <br>  
