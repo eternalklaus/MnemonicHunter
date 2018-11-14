@@ -31,7 +31,7 @@ You can use those mnemonics for searching.
 
 | Mnemonic | Information | Description |
 |:--------|:--------|:--------|
-| /digit | OPCODE | ModR/M byte of the instruction uses only the r/m (register or memory) operand. Digit is 0~7 |
+| /digit | OPCODE | ModR/M byte of the instruction uses only the r/m (register or memory) operand. <br> Digit is 0~7 |
 | /r | OPCODE | ModR/M byte of the instruction contains both a register operand and an r/m operand. |
 | cb,cw,cd,cp | OPCODE | 1-byte (cb), 2-byte (cw), 4-byte (cd) or 6-byte (cp) value |
 | r32 | INSTRUCTION | 32-bit doubleword register |
