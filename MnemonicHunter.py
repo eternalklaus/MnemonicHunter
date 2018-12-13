@@ -11,6 +11,8 @@ def find_nth(haystack, needle, n):
         n -= 1
     return start
 
+
+
 def get_html(url):
    _html = ""
    resp = requests.get(url)
@@ -21,10 +23,12 @@ def get_html(url):
       name = _html[i1 + len('<h1>'):i2]
    return _html, name
 
+
+
 if __name__=="__main__":
 	# case 1. simple string
 	if len(sys.argv) < 2:
-		print "usage : python MnemonicScrapper.py [MNEM-TO-SEARCH_01] [MNEM-TO-SEARCH_02] ..."
+		print "usage : python MnemonicHunter.py [MNEM-TO-SEARCH_01] [MNEM-TO-SEARCH_02] ..."
 		sys.exit()
 	
 	search = []
@@ -38,18 +42,23 @@ if __name__=="__main__":
 		url = 'https://c9x.me/x86/html/file_module_x86_id_{}.html'.format(i)
 		text, name = get_html(url)
 		for s in search:
-			if s not in text: continue # filterate 
-		print name
+			if s not in text: continue # filtering... 
+		# print name
 		exist.append(i)
 		count = text.count('<code>')
+		line_Mnemonic = 'dummy initialize'
 		for j in xrange(count):
 			start = text.index('<code>') + len('<code>')
 			end   = text.index('</code>')
-			line = text[start:end]
+			before = line_Mnemonic 
+
+			line_Opcode = before # html사응로 바로 이전의 <code>...</code> 이 Opcode자리임. 
+			line_Mnemonic = text[start:end]
 			text = text[end + len('</code>'):]
 			for s in search:
-				if s in line:
-					print " "+line
+				if s in line_Mnemonic:
+					print " "+line_Opcode + " ---> " + line_Mnemonic
+					
 			
 	print exist
 	
