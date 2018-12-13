@@ -32,6 +32,7 @@ if __name__=="__main__":
 		sys.exit()
 	
 	search = []
+	result = []
 	for i in range(1, len(sys.argv)):
 		search.append(sys.argv[i])
 	
@@ -43,7 +44,6 @@ if __name__=="__main__":
 		text, name = get_html(url)
 		for s in search:
 			if s not in text: continue # filtering... 
-		# print name
 		exist.append(i)
 		count = text.count('<code>')
 		line_Mnemonic = 'dummy initialize'
@@ -57,33 +57,12 @@ if __name__=="__main__":
 			text = text[end + len('</code>'):]
 			for s in search:
 				if s in line_Mnemonic:
-					print " "+line_Opcode + " ---> " + line_Mnemonic
-					
+					# print " "+line_Opcode + " ---> " + line_Mnemonic
+					if line_Mnemonic not in result:
+						print line_Mnemonic
+						result.append(line_Mnemonic)
+		print ''
 			
 	print exist
-	
-	# case 2. regex
-	'''
-	p = re.compile('/'+'[0-7]') # /digit
-	
-	exist = []
-	for i in range(1,333): 
-		url = 'https://c9x.me/x86/html/file_module_x86_id_{}.html'.format(i)
-		text, name = get_html(url)
-		if len(p.findall(text)) > 0: 
-			print name + ' [O]'
-			exist.append(i)
-			count = text.count('<code>')
-			for i in xrange(count):
-				start = text.index('<code>') + len('<code>')
-				end   = text.index('</code>')
-				line = text[start:end]
-				text = text[end + len('</code>'):]
-				if len(p.findall(line)) > 0:
-					print " "+line
-		else:
-			"no" 
-	print exist
-	'''
 
 
