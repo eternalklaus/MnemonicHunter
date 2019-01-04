@@ -45,4 +45,4 @@ You can use those mnemonics for searching.
 
 <br>  
 
-Need more information about assembler mnemonic? see [here](http://www.uobabylon.edu.iq/uobColeges/ad_downloads/6_2708_780.pdf).
+Need more information about assembler mnemonic? refer [here](http://www.uobabylon.edu.iq/uobColeges/ad_downloads/6_2708_780.pdf).
