@@ -5,7 +5,7 @@
 
 ## About MnemonicHunter
 MnemonicHunter searches instructions that using designated mnemonic operand.  
-This application leverages https://c9x.me.  
+This application leverages https://c9x.me/x86.  
 <br>  
 
 ## Install
