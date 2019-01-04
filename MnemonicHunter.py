@@ -87,8 +87,8 @@ if __name__=="__main__":
 	for i in range(1,333): 
 		url = 'https://c9x.me/x86/html/file_module_x86_id_{}.html'.format(i)
 		resdic = html2dictionary(url)
-		select = 'yes' # 디폴트 셋팅
 		for content in resdic['Mnemonic']:
+			select = 'yes' # 디폴트 셋팅
 			for b in blacklist:
 				if b in content:
 					select = 'no'
