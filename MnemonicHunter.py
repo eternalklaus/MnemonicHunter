@@ -83,25 +83,26 @@ if __name__=="__main__":
 	print "whitelist : {}".format(whitelist)
 	print ''
 	
-
+	#blacklist 부터 필터링하고나서, whitelist 매치되는넘들을 추가함.
 	for i in range(1,333): 
 		url = 'https://c9x.me/x86/html/file_module_x86_id_{}.html'.format(i)
 		resdic = html2dictionary(url)
-		for content in resdic['Mnemonic']:
-			select = 'yes' # 디폴트 셋팅
+		
+		for i in xrange(len(resdic['Mnemonic'])):
+			select  = 'yes' # 디폴트 셋팅
 			for b in blacklist:
-				if b in content:
+				if b in resdic['Mnemonic'][i]:
 					select = 'no'
 			for w in whitelist:
-				if w not in content:
+				if w not in resdic['Mnemonic'][i]:
 					select = 'no'
 			if select == 'yes': # 살아남았다면
-				print content
+				print resdic['Mnemonic'][i]
 
 
-		for c in resdic['Opcode']:
+		for i in xrange(len(resdic['Opcode'])):
 			'nothing to do'
 
-		for c in resdic['Description']:
+		for i in xrange(len(resdic['Description'])):
 			'nothing to do'
 	
