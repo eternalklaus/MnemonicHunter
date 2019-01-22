@@ -25,9 +25,9 @@ As the same manner, search instructions using *immediate 4byte value* as operand
 
     python MnemonicHunter.py --whitelist "imm32"
 
-Also, you can denote string to be excludeed from searching. 
+Also, you can denote the page number of *c9x.me/x86* to start searching. 
 
-    python MnemonicHunter.py --blacklist "r/m16" "r/m8"
+    python MnemonicHunter.py --whitelist "r/m16" "r/m8" --startfrom ''292
 <br>  
 
 ## Mnemonic
