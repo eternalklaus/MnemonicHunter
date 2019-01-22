@@ -27,7 +27,7 @@ As the same manner, search instructions using *immediate 4byte value* as operand
 
 Also, you can denote the page number of *c9x.me/x86* to start searching. 
 
-    python MnemonicHunter.py --whitelist "r/m16" "r/m8" --startfrom ''292
+    python MnemonicHunter.py --whitelist "r/m16" "r/m8" --startfrom "292"
 <br>  
 
 ## Mnemonic
