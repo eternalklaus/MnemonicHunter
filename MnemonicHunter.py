@@ -49,28 +49,23 @@ def html2dictionary(url):
 
 def parseargv(sysargv):
 	whitelist = []
-	blacklist = []
 	startfrom = 1 # 디폴트로다가는 url 1부터 시작한다. 
 	mode = 'default'
 
 	for str in sysargv:
-		if str == '--blacklist': # legacy... no more use
-			mode = '--blacklist'
-			continue
-		elif str == '--whitelist':
+		if str == '--whitelist':
 			mode = '--whitelist'
 			continue
 		elif str == '--startfrom':
 			mode = '--startfrom'
 			continue
-		if mode == '--blacklist':
-			blacklist.append(str)
-		elif mode == '--whitelist':
+		
+		if mode == '--whitelist':
 			whitelist.append(str)
 		elif mode == '--startfrom':
 			startfrom = int(str)
 
-	return blacklist, whitelist, startfrom
+	return  whitelist, startfrom
 
 if __name__=="__main__":
 
@@ -80,21 +75,22 @@ if __name__=="__main__":
 		print ""
 		print "Options)"
 		print "    --whitelist : specifies the string to be included from searching"
+		print "    --startfrom : specifies the page number of c9x.me/x86 to start searching"
+
 		print ""
 		print "Example)"
-		print "     python MnemonicHunter.py --whitelist 'IMM' "
+		print "     python MnemonicHunter.py --whitelist 'imm316' 'imm32'"
+		print "     python MnemonicHunter.py --whitelist 'r/m16' --startfrom '292' "
 		print ""
 		sys.exit()
 	
-	blacklist, whitelist, startfrom = parseargv(sys.argv)
+	whitelist, startfrom = parseargv(sys.argv)
 	print ''
-	print "blacklist : {}".format(blacklist)
 	print "whitelist : {}".format(whitelist)
 	print ''
 	
-	#blacklist 부터 필터링하고나서, whitelist 매치되는넘들을 추가함.
 	for i in range(startfrom,333): 
-		print i
+		# print i
 		url = 'https://c9x.me/x86/html/file_module_x86_id_{}.html'.format(i)
 		resdic = html2dictionary(url)
 		
@@ -115,8 +111,6 @@ if __name__=="__main__":
 			
 			if select == 'yes': # 살아남았다면
 				print resdic['Mnemonic'][i].ljust(70) + ' : ' + resdic['Opcode'][i]
-
-		# TODO: 잘되면 커밋 및 푸쉬. 고고. 푸쉬하면 이거 지우쟈아~
 
 		for i in xrange(len(resdic['Opcode'])):
 			'nothing to do'
