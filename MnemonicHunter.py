@@ -123,6 +123,6 @@ if __name__=="__main__":
 						select = 'yes'
 			
 			if select == 'yes': # 살아남았다면
-				print resdic[colomnname][i].ljust(70) + ' : ' + resdic['Opcode'][i]
+				print resdic['Mnemonic'][i].ljust(70) + ' : ' + resdic['Opcode'][i].ljust(30) + ' ' + resdic['Description'][i]
 
 
