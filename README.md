@@ -19,15 +19,12 @@ This application leverages https://c9x.me/x86.
 Lets search about instruction for effective address computation.  
 Mnemonic `r/m` and `m32` means memory reference, so let's search about it.   
 
-    python MnemonicHunter.py --whitelist "r/m" "m32"
+    python MnemonicHunter.py --colomnname 'Mnemonic' --search "r/m" "m32"
+  
 
-As the same manner, search instructions using *immediate 4byte value* as operand.
+(Optional) You can denote the page number of *c9x.me/x86* to start searching. 
 
-    python MnemonicHunter.py --whitelist "imm32"
-
-Also, you can denote the page number of *c9x.me/x86* to start searching. 
-
-    python MnemonicHunter.py --whitelist "r/m16" "r/m8" --startfrom "292"
+    python MnemonicHunter.py --colomnname 'Description' --search "seg" "segment" --startfrom "292"
 <br>  
 
 ## Mnemonic
