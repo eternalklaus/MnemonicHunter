@@ -72,6 +72,8 @@ def parseargv(sysargv):
 		elif mode == '--colomnname':
 			colomnname = str
 
+	for i in xrange(len(search)):
+		search[i] = lowercase(search[i]) # DS, ds 헷갈리니깐 걍 다 소문자로 획일화하자
 	return  search, startfrom, colomnname
 
 def exitproc():
@@ -97,10 +99,16 @@ if __name__=="__main__":
 	search, startfrom, colomnname = parseargv(sys.argv)
 	
 	if len(search) is 0:
+		print '[!] Searching string is Null!'
+		print ''
 		exitproc() 
 	if colomnname == '':
+		print '[!] Invalid colomnname'
+		print ''
 		exitproc()
 	if colomnname not in ['Mnemonic', 'Opcode', 'Description']:
+		print '[!] Invalid colomnname'
+		print ''
 		exitproc()
 
 	for i in range(startfrom,333): 
